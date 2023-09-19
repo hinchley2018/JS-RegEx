@@ -13,7 +13,7 @@ phone number(s): 555-123-4567 555-567-8910
 email: lsouza@gmail.com 
 animals: Dog, cat
 bio: Cat ipsum dolor sit amet, exercitationem incididunt. Laborum consequuntur, error velitesse incidunt. Nostrud fugit eu, anim. Sint qui but exercitationem iure yet nesciunt. Occaecat do so ut yet nihil. Fugiat fugiat but voluptatem or velit, for aut. 
-status: Approved 
+STATUS: Approved 
 `
 
 /* 
@@ -30,9 +30,10 @@ Expected Output:
 ["555-123-4567", "555-567-8910"]
 
 */ 
- 
-let phoneReg = /write your regex here/
+ //you need the \d to tell its a digit not letter d
+let phoneReg = /\d{3}-\d{3}-\d{4}/
 
+console.log("Phone", sampleApp.match(phoneReg))
 /* 
 
 Regular Expression 2: Email 
@@ -51,8 +52,8 @@ Expected Output:
 
 */ 
 
-let emailReg = /write your regex here/
-
+let emailReg = /[a-zA-Z0-9]+@gmail\.com/
+console.log("email", sampleApp.match(emailReg))
 /* 
 
 Regular Expression 3: 
@@ -67,4 +68,5 @@ Expected Output:
 
 */ 
 
-let statusReg = /write your regex here/
+let statusReg = /status:/i
+console.log("status", sampleApp.search(statusReg))
